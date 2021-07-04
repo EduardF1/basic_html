@@ -1,0 +1,274 @@
+<!--
+##############################################################
+#####                    INTRODUCTION                    #####
+##############################################################
+    By convention, the starting point of any website is the index.html file
+
+    By standard, the below code is called html boilerplate code and that is because
+    the below section is a standard template that will be reused for several/many projects.
+    Boilerplate code = template code
+
+    Dissection:
+    <!DOCTYPE html> : this tag tells the browser to render the document as html version type 5
+    <html lang="en">...</html> : this tells the browser that everything between these tags (...)
+    is html code. In our case, this consists of a document <head>...</head> and <body>...</body>
+
+    <head>...</head> : holds information about the web page
+    about the web page, also tells the browser how to handle the page
+    - might have a <title>SomeTitle</title> : tells the browser what is the title of this web page
+
+    <meta charset="UTF-8"> : provide extra metadata about the web page, tell the browser that when
+    opening the file, all the text is encoded in the UTF-8 encoding system. Available characters that
+    can be placed in the html file can be found at https://www.fileformat.info/info/charset/UTF-8/list.htm.
+    - When opening an outdated browser such as IE or an email from a bulgarian friend, we might encounter
+    mojibake (characters that are transformed), wrong rendering.
+    - Various type of encoding, specific to different languages. Different languages use different symbols.
+    - Wrong encoding can result in "broken" web pages, the same character (ex.: code 224 has different values
+    depending on the encoding, one value for english, one for arabic, different from one another).
+
+    "UTF-8" is standard encoding for HTML5, that is because it includes all international symbols and all unicode
+    characters. It also includes emojis.
+
+    Below, several (common) attributes are listed for the <meta> tag, these attributes tell the browser how it should
+    render/display the web page. They also give SEs information about the website (where SE is Search Engine).
+    <head>
+         <meta charset="UTF-8">
+         <meta name="description" content="Free Web tutorials">
+         <meta name="keywords" content="HTML, CSS, JavaScript">
+         <meta name="author" content="John Doe">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    - For example, we can navigate to https://developer.mozilla.org/en-US/, right-click the web page and select
+    "View Page Source", it will display the entire HTML file used to render the MDN web page.
+    - After right-clicking the web page and selecting "View Page Source", we can use CTRL + F and enter description to
+    find the web page description.
+    - If we go to www.google.com and enter mdn, we can see below the first result that the description is exactly the same as
+    what we saw in the previous step (the description meta tag <meta description="..."). This is what SEs basically do, they
+    crawl the HTML of the website and look for specific <meta> tags in order to figure out how to display the website and what it
+    is about.
+
+    More details about the html <meta> tag can be found at https://www.w3schools.com/tags/tag_meta.asp.
+
+##############################################################
+#####                    Other TAGS                      #####
+##############################################################
+
+    <i> vs <em> : the <i> tag will style the text it wraps to italic but this is just styling whilst the <em> tag will both style
+    the text it wraps and stress it (for the browser), the latter is called emphasize tag. Both have the purpose to italicize the
+    text.
+    Similarly, is the <b> vs <strong> : both resolve to the same styling but the <strong> tag confers meaning to the browser, not just
+    style.
+
+##############################################################
+#####                      LIST TAG                      #####
+##############################################################
+
+    <ol> stands for ordered list
+    <ul> stands for unordered list
+    <li> stands for list item
+    For more documentation see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/* where * can be replaced by ol, li, ul
+    Nesting is also possible.
+
+##############################################################
+#####                      IMAGE TAG                     #####
+##############################################################
+
+    <img src="me.png"> : self-closing tag, the tag alone is not enough, we need to provide a source (src) and that is the source of the
+    image. It can be an URL (fetch the image from web) or local image (resource).
+
+    When the browser traverses the HTML document and comes across the <img...> tag, it will ping the server(s) where the image is located (to fetch it), if permission is granted, the image
+    will be rendered (the browser requests the image from the server(s) that host the image, downloads it and then displays/renders it as part of the webpage). If the host server(s) go offline ("die"),
+    we will end up showing an error image (it means that the image is no longer available, hosted at the specified address). To avoid this, we download the image and use it as a resource.
+    <img style="width: 300px; height: 300px" src="https://cdnb.artstation.com/p/assets/images/images/018/534/733/large/boris-tsui-trench-run-krieg.jpg?1559743438" alt="image couldn't be found">
+
+    Getting back to HTML, M is for Markup (the script styling via tags), HT stands for HyperText. HyperText is a bunch of text documents that can be linked together. (Say we have 3 documents, A,B,C,
+    if I click a link on doc. A, it will redirect me to doc. B if there is a link between A and B. The same case would be viable for B and C.
+
+    ```````````                       ```````````                       `````````````
+    `         `                       `         `                       `           `
+    `  doc A  `                       `  doc B  `                       `   doc C   `
+    `link to B`  click link to B ===> `link to C`  click link to C ===> `           `
+    `         `                       `         `                       `           `
+    `         `                       `         `                       `           `
+    ```````````                       ```````````                       `````````````
+
+##############################################################
+#####                      ANCHOR TAG                    #####
+##############################################################
+
+ opening tag                    Link destination                                    Link Text (identifier for the user)
+     |                                  |                                               |
+    <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp"><em>Course link</em></a>
+         |
+       HTML attribute
+    <a></a> : anchor tag, the href attribute specifies the address pointed at by the URL (or URL fragment).
+    - not a self-closing tag
+    - most important attribute is the href
+    - between the opening and closing tags is the link text
+    - the link color will be blue if the link was never accessed before, otherwise, purple.
+
+Deprecated = not supported/recommended anymore.
+
+##############################################################
+#####                      Table TAG                     #####
+##############################################################
+
+    <table>
+        <tr>
+            <td>Angela</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>Mark</td>
+            <td>12</td>
+        </tr>
+    </table>
+
+    the above structure can be visualized like this:
+    ```````````````````````````````````````````````
+    `        TD         `         TD              `
+    `      Angela       `         24              `
+    ```````````````````````````````````````````````
+    `        TD         `         TD              `
+    `      Mark         `         12              `
+    ```````````````````````````````````````````````
+
+   - By default, the table has no styling
+   - To add data to the table, we need to add <tr> (table rows) that contain <td> (table data)
+   - The <tr> tag creates a single row in the table
+   - The <td> tag (table data) contains the actual data that goes in the table
+   - There are no table columns, the workaround is defining rows (and depending on the need, dividing them)
+   - Each row is rendered/positioned horizontally and in-order
+   - A <tr> can have many <td> tags inside, each adding a new cell in the row
+
+    ##############################################################
+    #####                      Table TAG                     #####
+    ##############################################################
+
+    -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ed's Page</title>
+    </head>
+    <body>
+        <table cellspacing="20">
+            <tr>
+                <td>
+                    <img style="width: 300px; height: 300px;" src="resources/krieg_image_circle.png" alt="image couldn't be found">
+                </td>
+                <td>
+                    <p><em>My name is <strong>Eduard</strong></em></p>
+                    <p><em>This is a description of what I'm up to now... <strong><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp">Course link</a></strong><br></em>
+                        Currently on my way to learning fullstack web development... <br>
+                        Stuff didn't go so well with it until now... <br>
+                        Hopefully... it will get better in the future...</p>
+                </td>
+            </tr>
+        </table>
+
+        <hr style="height: 0.19rem" color="grey">
+
+        <h3><strong>Schools</strong></h3>
+        <ul>
+            <li>Scoala nr.52 Iancului</li>
+            <li>Colegiul National Matei Basarab</li>
+            <li>IBA Erhversakademi Kolding</li>
+            <li>VIA UCL Horsens</li>
+        </ul>
+
+        <hr style="height: 0.19rem" color="grey">
+
+        <table cellspacing="10">
+            <thead>
+                <tr>
+                    <th colspan="3">Work Experience</th>
+                </tr>
+                <tr>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>02-2021</td>
+                    <td>06-2021</td>
+                    <td>Junior Systems Engineer</td>
+                </tr>
+                <tr>
+                    <td>05-2019</td>
+                    <td>05-2021</td>
+                    <td>Goods' Receiving Operator</td>
+                </tr>
+                <tr>
+                    <td>09-2016</td>
+                    <td>01-2017</td>
+                    <td>Call Center Operator</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Footer stuff</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <hr style="height: 0.19rem" color="grey">
+
+        <h3>Skills</h3>
+        <!--
+            Challenge Nested table layout
+              <table border="1" cellspacing="10">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Java development</td>
+                            <td>🌟🌟🌟🌟</td>
+                        </tr>
+                        <tr>
+                            <td>Driving</td>
+                            <td>🌟🌟</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Frontend development</td>
+                            <td>🌟</td>
+                        </tr>
+                        <tr>
+                            <td>Surfing</td>
+                            <td>🌟🌟🌟</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        -->
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Java development</td>
+                            <td>🌟🌟🌟🌟</td>
+                        </tr>
+                        <tr>
+                            <td>Driving</td>
+                            <td>🌟🌟</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <hr style="height: 0.19rem" color="grey">
+
+        <a href="pages/hobbies.html">My hobbies</a>
+        <a href="pages/contact-me.html">Contact Me!</a>
+    </body>
+</html>

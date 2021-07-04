@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact Me @:</title>
+    </head>
+    <body>
+        <p>Email: fischer_eduard@yahoo.com</p>
+        <p>Phone: +45 50 222 786</p>
+        <p>Address: Sundbakken 20A, 1.8</p>
+        <p>City: Horsens, 8700, DK</p>
+        <!--
+        Other possible input types (also see inputTypes.html):
+            <input type="color"> : color picker
+            <input type="checkbox"> : checkbox
+            <input type="file"> : file selector
+            <input type="tel"> : telephone no. input box
+            <input type="radio"> : radio button
+            <input type="image"> : image
+            <input type="datetime-local"> : datetime picker
+
+            <input type="password"> : allows insertion of characters that
+            will be masked (hidden), they default to ***** for each character
+            in the sequence. The use case for this type of input field is
+            that of protecting the user from being overlooked by someone
+            when they are typing their password.
+
+            A lot of things that we encounter on the web are just HTML
+            inputs.
+            The <form></form> tag pair defines a form aimed to capture
+            user input.
+
+            The anatomy of HTML forms is:
+            <form>
+                <label>labelName</label> : descriptive label displayed inside
+                the form.
+                <input type="text"> : self-closing tag, the input type
+                is defined by using the type attribute
+                <input type="submit> : input submit button for the form
+            </form>
+            The form itself does not do much, hence it requires the label
+            and input.
+            Even though we're using the input attribute, with specific
+            keywords set on the type property, we get different objects
+            rendered/added to the web page. (text boxes, color pickers etc..)
+
+            <textarea></textarea> : tag pair determines a text area that
+            captures user input, the number of rows determines the initial
+            height of the textarea and the number of columns determines the
+            width of it. Even so, in the lower right corner, the textarea
+            has a drag section which can be used to enlarge/minimize the
+            textarea.
+
+            If the action attribute is set to the ../index.html page, when the
+            user clicks submit, the user will be redirected to that page.
+
+            When setting the action to mailto:fischer_eduard@yahoo.com,
+            after the user presses the submit button, this will open the
+            default mail client (Gmail on Chrome, Mail on Mac) and inputs the
+            specified email address. The method attribute set to "post" specifies
+            that all the entered input will be sent to the mail client.
+            The name attributes specify how the inputs should be labelled once they're
+            received.
+        -->
+        <hr>
+        <form action="mailto:fischer_eduard@yahoo.com" method="post" enctype="text/plain">
+            <label>Your name:</label>
+            <input type="text" name="yourName" value=""><br>
+            <label>Your Email:</label>
+            <input type="email" name="yourEmail" value=""><br>
+            <label>Your Message:</label>
+            <textarea name="yourMessage" rows="10" cols="30"></textarea><br>
+            <input type="submit" name="">
+        </form>
+    </body>
+</html>
